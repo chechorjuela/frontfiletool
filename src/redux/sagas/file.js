@@ -15,7 +15,7 @@ export function* getFilesSaga(states = "") {
     yield put(getFilesSlice(data.data));
     yield put(loadingRequest(false))
   } catch (e) {
-    console.log(e)
+    yield put(getFilesSlice([]));
   }
 }
 
